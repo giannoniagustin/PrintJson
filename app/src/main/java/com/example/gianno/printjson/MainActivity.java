@@ -16,23 +16,31 @@ import com.example.imprimircomprobante.Print;
 
 public class MainActivity extends AppCompatActivity {
 
-    public void checkPermissionAndroid() {
+    public boolean checkPermissionAndroid() {
 
 
         if (
                 ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED &&
-                        ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+        {
             ActivityCompat.requestPermissions(this, new String[]{
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
                     Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+            return true;
 
         }
+        return false;
 
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        checkPermissionAndroid();
+       if (! checkPermissionAndroid())
+       {
+           Print Print = new Print();
+           Print.imprimir("Prueba a imprimir","Gianno");
+
+       }
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
@@ -62,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                     Print Print = new Print();
-                    Print.imprimir("Prueba a imprimir");
+                    Print.imprimir("Prueba a imprimir","Gianno");
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
                 } else {
