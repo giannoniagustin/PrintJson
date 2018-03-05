@@ -16,7 +16,7 @@ public class Print {
 
     DefaultHttpClient c;
 
-    public boolean imprimir(String combrobante)
+    public boolean imprimir(String combrobante,String nombrearchivo)
     {
         try {
             Log.setup();
@@ -32,7 +32,7 @@ public class Print {
         controladorArchivos.setManejadorServidor(manejadorServidor);
 
 
-        Archivo archivo= controladorArchivos.crearArchivoTrack();
+        Archivo archivo= controladorArchivos.crearArchivoTrack(nombrearchivo);
       archivo.grabarArchivo(combrobante);
 
       controladorArchivos.enviarArchivoServidor(archivo);

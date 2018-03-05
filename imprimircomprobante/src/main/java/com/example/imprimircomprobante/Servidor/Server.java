@@ -24,7 +24,7 @@ public class Server {
 
 
     private static final String IP="192.168.1.106";
-
+ // private static final String IP="169.254.157.165";
     private static final String URL_SERVIDOR = "http://"+IP+":8080/PrintJsonServer/AlmacenarArchivoServlet";
 
      private HttpClient client ;

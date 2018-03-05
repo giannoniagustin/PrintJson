@@ -148,9 +148,9 @@ public class ControladorArchivos /*implements AsyncRespuestaEnvioArchivos*/{
 
 
 
-    public Archivo crearArchivoTrack(){
+    public Archivo crearArchivoTrack(String nombreArchivo){
 
-        Archivo archivoTrack=new Archivo("txt",ControladorArchivos.PATH_ARCH_TRACK,null);
+        Archivo archivoTrack=new Archivo("txt",ControladorArchivos.PATH_ARCH_TRACK,nombreArchivo);
 
         return archivoTrack;
 
