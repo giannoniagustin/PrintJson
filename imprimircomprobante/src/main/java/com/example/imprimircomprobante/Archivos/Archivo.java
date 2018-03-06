@@ -21,7 +21,7 @@ public class Archivo extends ElementoArchivo  {
             super(extension, path, nombre);
           //  if (nombre == null) {
                 Date fechaHoy = Calendar.getInstance().getTime();
-                String nombreArchivoHoy = /*ControladorArchivos.NOMBRE_ARCH_TRACK*/nombre +ControladorArchivos.EXTENSION_TXT;
+                String nombreArchivoHoy =nombre;
                 this.nombre = nombreArchivoHoy;
                 this.fechaCreacion = Calendar.getInstance().getTime();
                 crearArchivo();
